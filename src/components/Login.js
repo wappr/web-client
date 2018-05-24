@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Login.css';
 import axios from 'axios';
 
 export default class Login extends Component {
@@ -12,7 +13,7 @@ export default class Login extends Component {
   }
   render() {
 	  return (
-	    <div>
+	    <div className="LoginContainer">
 	      <input type="text" id="email" placeholder="email" value={this.state.email} onChange={this.handleChange} />
 	      <input type="text" id="password" placeholder="password" value={this.state.password} onChange={this.handleChange} />
 	      <button onClick={this.login}>Login</button>
