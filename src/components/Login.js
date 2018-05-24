@@ -14,6 +14,7 @@ export default class Login extends Component {
   render() {
 	  return (
 	    <div className="LoginContainer">
+				<h1>Chat Login</h1>
 	      <input type="text" id="email" placeholder="email" value={this.state.email} onChange={this.handleChange} />
 	      <input type="text" id="password" placeholder="password" value={this.state.password} onChange={this.handleChange} />
 	      <button onClick={this.login}>Login</button>
