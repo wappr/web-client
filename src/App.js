@@ -8,7 +8,8 @@ class App extends Component {
     this.state = {
       authenticated: false,
       email: '',
-      password: ''
+      password: '',
+      token: '',
     }
     this.handleChange = this.handleChange.bind(this);
   }
@@ -39,6 +40,8 @@ class App extends Component {
     .then((response) => {
       if(response.data.status === "success") {
         this.setState({authenticated: true});
+        this.setState({token: response.data.token});
+        this.setState({password: ''});
       }
     })
   }
