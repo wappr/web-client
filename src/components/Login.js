@@ -15,9 +15,11 @@ export default class Login extends Component {
 	  return (
 	    <div className="LoginContainer">
 				<h1>Chat Login</h1>
-	      <input type="text" id="email" placeholder="email" value={this.state.email} onChange={this.handleChange} />
-	      <input type="text" id="password" placeholder="password" value={this.state.password} onChange={this.handleChange} />
-	      <button onClick={this.login}>Login</button>
+	      <form onSubmit={this.login}>
+					<input type="text" id="email" placeholder="email" value={this.state.email} onChange={this.handleChange} />
+		      <input type="password" id="password" placeholder="password" value={this.state.password} onChange={this.handleChange} />
+		      <button onClick={this.login}>Login</button>
+				</form>
 	    </div>
 	  )
   }
@@ -35,7 +37,7 @@ export default class Login extends Component {
         this.setState({password: ''});
 				this.props.login(this.state.email, response.data.token);
       }
-    })
+    });
   }
 
   handleChange = event => {
