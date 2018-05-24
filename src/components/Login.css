@@ -1,25 +1,29 @@
 .LoginContainer {
-	width:450px;
+	width:250px;
 	margin:0 auto;
 	font-family: 'Roboto', sans-serif;
+	padding:10px;
 }
 .LoginContainer h1 {
 	color:#424242;
+	text-align: center;
 }
 .LoginContainer input {
 	display:block;
-	padding:10px;
 	margin:10px 0;
-	border:0;
-	font-family: 'Roboto', sans-serif;
+	border:1px #ccc solid;
+	width:100%;
 }
 .LoginContainer button {
 	border:0;
-	padding:10px;
 	background:#0277bd;
 	color:#fff;
-	font-family: 'Roboto', sans-serif;
+}
+.LoginContainer, .LoginContainer button {
+	box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
 }
 .LoginContainer input, .LoginContainer button {
-	box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+	padding:10px;
+	font-family: 'Roboto', sans-serif;
+	box-sizing: border-box;
 }
