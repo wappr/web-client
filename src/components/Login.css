@@ -2,6 +2,9 @@
 	width:450px;
 	margin:0 auto;
 }
+.LoginContainer h1 {
+	color:#424242;
+}
 .LoginContainer input {
 	display:block;
 	padding:10px;
