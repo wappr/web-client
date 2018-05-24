@@ -11,7 +11,7 @@ export default class Contacts extends Component {
   render() {
 	  return (
 	    <div>
-	      { this.state.contacts.map(contact => <li key={contact.id}>{contact.name}</li>)}
+	      { this.state.contacts.map(contact => <li key={contact.id} data-id={contact.id} onClick={(i) => this.props.loadChat(i)}>{contact.name}</li>)}
 	    </div>
 	  )
   }

@@ -25,9 +25,13 @@ class App extends Component {
     return (
       <div className="App">
         Logged in
-        <Contacts token={this.state.token} />
+        <Contacts token={this.state.token} loadChat={this.loadChat} />
       </div>
     );
+  }
+
+  loadChat = (e) => {
+    console.log(e.target.dataset.id);
   }
 
   componentDidMount() {
