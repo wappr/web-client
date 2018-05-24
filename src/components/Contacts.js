@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Contacts.css';
 import axios from 'axios';
 
 export default class Contacts extends Component {
@@ -10,8 +11,10 @@ export default class Contacts extends Component {
   }
   render() {
 	  return (
-	    <div>
-	      { this.state.contacts.map(contact => <li key={contact.id} data-id={contact.id} onClick={(i) => this.props.loadChat(i)}>{contact.name}</li>)}
+	    <div className="Contacts">
+	      <ul>
+					{ this.state.contacts.map(contact => <li key={contact.id} data-id={contact.id} onClick={(i) => this.props.loadChat(i)}>{contact.name}</li>)}
+				</ul>
 	    </div>
 	  )
   }
