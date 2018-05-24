@@ -30,12 +30,25 @@ class App extends Component {
     );
   }
 
-  login = (email, token) => {
+  componentDidMount() {
+    this.checkForToken();
+  }
+
+  // Check if the user already has a token stored locally, if they do, grab it
+  // and set it in the state and also set them as authenticated
+  checkForToken() {
+    if(localStorage.getItem('token')) {
+      this.setState({token: localStorage.getItem('token')});
+      this.setState({authenticated: true});
+    }
+  }
+
+  login = (token) => {
     // Set the token before changing authenticated to true
     // Otherwise, it'll render the App before it has set the token
     this.setState({token: token});
     this.setState({authenticated: true});
-    this.setState({email: email});
+    localStorage.setItem('token', token);
   }
 
   handleChange = event => {

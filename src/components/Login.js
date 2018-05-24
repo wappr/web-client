@@ -35,7 +35,7 @@ export default class Login extends Component {
         this.setState({authenticated: true});
         this.setState({token: response.data.token});
         this.setState({password: ''});
-				this.props.login(this.state.email, response.data.token);
+				this.props.login(response.data.token);
       }
     });
   }
