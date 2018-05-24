@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import Login from './components/Login';
 import './App.css';
 
 class App extends Component {
@@ -8,7 +8,6 @@ class App extends Component {
     this.state = {
       authenticated: false,
       email: '',
-      password: '',
       token: '',
     }
     this.handleChange = this.handleChange.bind(this);
@@ -17,9 +16,7 @@ class App extends Component {
     if(this.state.authenticated === false) {
       return (
         <div>
-          <input type="text" id="email" placeholder="email" value={this.state.email} onChange={this.handleChange} />
-          <input type="text" id="password" placeholder="password" value={this.state.password} onChange={this.handleChange} />
-          <button onClick={this.login}>Login</button>
+          <Login login={this.login} />
         </div>
       )
     }
@@ -31,19 +28,10 @@ class App extends Component {
     );
   }
 
-  login = event => {
-    event.preventDefault();
-    axios.post('http://localhost:8000/v1/auth', {
-      email: this.state.email,
-      password: this.state.password
-    })
-    .then((response) => {
-      if(response.data.status === "success") {
-        this.setState({authenticated: true});
-        this.setState({token: response.data.token});
-        this.setState({password: ''});
-      }
-    })
+  login = (email, token) => {
+    this.setState({authenticated: true});
+    this.setState({email: email});
+    this.setState({token: token});
   }
 
   handleChange = event => {
