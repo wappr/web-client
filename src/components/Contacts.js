@@ -21,7 +21,7 @@ export default class Contacts extends Component {
 
 	componentDidMount() {
 		let self = this;
-		axios.get('http://localhost:8000/v1/contacts', {
+		axios.get('https://api.wappr.net/v1/contacts', {
 			params: {
 				token: this.props.token
 			}

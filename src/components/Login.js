@@ -26,7 +26,7 @@ export default class Login extends Component {
 
   login = event => {
     event.preventDefault();
-    axios.post('http://localhost:8000/v1/auth', {
+    axios.post('https://api.wappr.net/v1/auth', {
       email: this.state.email,
       password: this.state.password
     })
