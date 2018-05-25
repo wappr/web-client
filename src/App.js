@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Login from './components/Login';
 import Contacts from './components/Contacts';
+import Button from './components/Button';
 import './App.css';
 
 class App extends Component {
@@ -26,8 +27,15 @@ class App extends Component {
       <div className="App">
         Logged in
         <Contacts token={this.state.token} loadChat={this.loadChat} />
+        <Button type="warning" action={this.logout}>Logout</Button>
       </div>
     );
+  }
+
+  logout = () => {
+    localStorage.removeItem('token');
+    this.setState({token: ''});
+    this.setState({authenticated: false});
   }
 
   loadChat = (e) => {
