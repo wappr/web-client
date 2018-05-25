@@ -21,10 +21,8 @@ export default class Contacts extends Component {
 
 	componentDidMount() {
 		let self = this;
-		axios.get('https://api.wappr.net/v1/contacts', {
-			params: {
-				token: this.props.token
-			}
+		axios.post('https://api.wappr.net/v1/contacts', {
+			token: this.props.token
 		}).then(function(response) {
 			const contacts = response.data;
 			self.setState({contacts: contacts});
