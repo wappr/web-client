@@ -2,8 +2,8 @@ import React from 'react';
 
 const search = () => {
     return (
-        <div className="jumbotron">
-          Search
+        <div className="Search">
+          <h1>Search</h1>
         </div>
     );
 }

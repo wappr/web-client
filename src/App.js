@@ -30,7 +30,6 @@ class App extends Component {
         </div>
       )
     }
-    console.log(this.state.token);
 
     return (
       <Router>
@@ -38,9 +37,10 @@ class App extends Component {
           <ul>
             <li><Link to="/search">Search</Link></li>
             <li><Link to="/chat">Chat</Link></li>
+            <li><a href="#" onClick={this.logout}>Logout</a></li>
           </ul>
           <Route path="/search" render={()=><Search token={this.state.token}/>}/>
-          <Route path="/chat" render={()=><Chat token={this.state.token}/>}/>
+          <Route path="/chat" render={()=><Chat token={this.state.token} loadChat={this.loadChat} />} />
         </div>
       </Router>
     );
@@ -69,6 +69,13 @@ class App extends Component {
     this.setState({token: token});
     this.setState({authenticated: true});
     localStorage.setItem('token', token);
+  }
+
+  logout = (e) => {
+    e.preventDefault();
+    this.setState({authenticated: false});
+    this.setState({token: ''});
+    localStorage.removeItem('token');
   }
 
   handleChange = event => {
