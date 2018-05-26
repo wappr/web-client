@@ -33,12 +33,12 @@ class App extends Component {
       <Router>
         <div className="App">
           <ul>
-            <li><Link to="/#/search">Search</Link></li>
-            <li><Link to="/#/chat">Chat</Link></li>
+            <li><Link to="/search">Search</Link></li>
+            <li><Link to="/chat">Chat</Link></li>
             <li><Link to="/" onClick={this.logout}>Logout</Link></li>
           </ul>
-          <Route path="/#/search" render={()=><Search token={this.state.token}/>}/>
-          <Route path="/#/chat" render={()=><Chat token={this.state.token} loadChat={this.loadChat} />} />
+          <Route path="/search" render={()=><Search token={this.state.token}/>}/>
+          <Route path="/chat" render={()=><Chat token={this.state.token} loadChat={this.loadChat} />} />
         </div>
       </Router>
     );
