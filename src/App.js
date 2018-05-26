@@ -31,7 +31,7 @@ class App extends Component {
 
     return (
       <Router>
-        <div className="Container">
+        <div className="container">
           <ul className="nav nav-tabs mb-3 mt-3">
             <li className="nav-item"><NavLink className="nav-link" activeClassName="active" to="/search">Search</NavLink></li>
             <li className="nav-item"><NavLink className="nav-link" activeClassName="active" to="/chat">Chat</NavLink></li>

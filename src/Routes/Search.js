@@ -10,7 +10,7 @@ export default class Search extends Component {
   }
     render() {
       return (
-          <div className="Search">
+          <div className="container">
             <h1>Search</h1>
             <input
               className="form-control"
