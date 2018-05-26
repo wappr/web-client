@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Disclaimer from './Disclaimer';
 import './Login.css';
 import axios from 'axios';
 
@@ -13,14 +14,19 @@ export default class Login extends Component {
   }
   render() {
 	  return (
-	    <div className="LoginContainer">
-				<h1>Chat Login</h1>
-	      <form onSubmit={this.login}>
-					<input type="text" id="email" placeholder="email" value={this.state.email} onChange={this.handleChange} />
-		      <input type="password" id="password" placeholder="password" value={this.state.password} onChange={this.handleChange} />
-		      <button onClick={this.login}>Login</button>
-				</form>
-	    </div>
+	    <div>
+        <div className="LoginContainer">
+  				<h1>Chat Login</h1>
+  	      <form onSubmit={this.login}>
+  					<input type="text" id="email" placeholder="email" value={this.state.email} onChange={this.handleChange} />
+  		      <input type="password" id="password" placeholder="password" value={this.state.password} onChange={this.handleChange} />
+  		      <button onClick={this.login}>Login</button>
+  				</form>
+  	    </div>
+        <div className="LoginDisclaimer">
+          <Disclaimer />
+        </div>
+      </div>
 	  )
   }
 
