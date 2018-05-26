@@ -6,7 +6,7 @@ import Search from './Routes/Search.js';
 import {
   BrowserRouter as Router,
   Route,
-  Link
+  NavLink
 } from 'react-router-dom';
 import './App.css';
 
@@ -32,10 +32,10 @@ class App extends Component {
     return (
       <Router>
         <div className="Container">
-          <ul>
-            <li><Link to="/search">Search</Link></li>
-            <li><Link to="/chat">Chat</Link></li>
-            <li><Link to="/" onClick={this.logout}>Logout</Link></li>
+          <ul className="nav nav-tabs mb-3 mt-3">
+            <li className="nav-item"><NavLink className="nav-link" activeClassName="active" to="/search">Search</NavLink></li>
+            <li className="nav-item"><NavLink className="nav-link" activeClassName="active" to="/chat">Chat</NavLink></li>
+            <li className="nav-item"><NavLink className="nav-link" activeClassName="active" to="/logout" onClick={this.logout}>Logout</NavLink></li>
           </ul>
           <Route path="/search" render={()=><Search token={this.state.token}/>}/>
           <Route path="/chat" render={()=><Chat token={this.state.token} loadChat={this.loadChat} />} />
