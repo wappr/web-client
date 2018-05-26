@@ -6,9 +6,7 @@ import Search from './Routes/Search.js';
 import {
   BrowserRouter as Router,
   Route,
-  Link,
-  Switch,
-  Redirect
+  Link
 } from 'react-router-dom';
 import './App.css';
 
@@ -37,7 +35,7 @@ class App extends Component {
           <ul>
             <li><Link to="/search">Search</Link></li>
             <li><Link to="/chat">Chat</Link></li>
-            <li><a href="#" onClick={this.logout}>Logout</a></li>
+            <li><Link to="/" onClick={this.logout}>Logout</Link></li>
           </ul>
           <Route path="/search" render={()=><Search token={this.state.token}/>}/>
           <Route path="/chat" render={()=><Chat token={this.state.token} loadChat={this.loadChat} />} />
@@ -72,7 +70,6 @@ class App extends Component {
   }
 
   logout = (e) => {
-    e.preventDefault();
     this.setState({authenticated: false});
     this.setState({token: ''});
     localStorage.removeItem('token');
