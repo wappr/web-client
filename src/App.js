@@ -1,6 +1,15 @@
 import React, { Component } from 'react';
 import Login from './components/Login';
-import Contacts from './components/Contacts';
+
+import Chat from './Routes/Chat.js';
+import Search from './Routes/Search.js';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch,
+  Redirect
+} from 'react-router-dom';
 import './App.css';
 
 class App extends Component {
@@ -21,12 +30,19 @@ class App extends Component {
         </div>
       )
     }
+    console.log(this.state.token);
 
     return (
-      <div className="App">
-        Logged in
-        <Contacts token={this.state.token} loadChat={this.loadChat} />
-      </div>
+      <Router>
+        <div className="App">
+          <ul>
+            <li><Link to="/search">Search</Link></li>
+            <li><Link to="/chat">Chat</Link></li>
+          </ul>
+          <Route path="/search" render={()=><Search token={this.state.token}/>}/>
+          <Route path="/chat" render={()=><Chat token={this.state.token}/>}/>
+        </div>
+      </Router>
     );
   }
 
