@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Login from './components/Login';
-<<<<<<< HEAD
 
 import Chat from './Routes/Chat.js';
 import Search from './Routes/Search.js';
@@ -9,10 +8,6 @@ import {
   Route,
   Link
 } from 'react-router-dom';
-=======
-import Contacts from './components/Contacts';
-import Button from './components/Button';
->>>>>>> ad5a2ade7244f9d2937f3d31fccd4d0f065e2bae
 import './App.css';
 
 class App extends Component {
@@ -35,7 +30,6 @@ class App extends Component {
     }
 
     return (
-<<<<<<< HEAD
       <Router>
         <div className="App">
           <ul>
@@ -47,13 +41,6 @@ class App extends Component {
           <Route path="/chat" render={()=><Chat token={this.state.token} loadChat={this.loadChat} />} />
         </div>
       </Router>
-=======
-      <div className="App">
-        Logged in
-        <Contacts token={this.state.token} loadChat={this.loadChat} />
-        <Button type="warning" action={this.logout}>Logout</Button>
-      </div>
->>>>>>> ad5a2ade7244f9d2937f3d31fccd4d0f065e2bae
     );
   }
 
