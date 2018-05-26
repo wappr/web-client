@@ -19,7 +19,7 @@ export default class Search extends Component {
             />
             <p className="text-muted"><small>Type at least three characters...</small></p>
             <ul class="list-group list-group-flush">
-            { this.state.results.map(result => <li key={result.id} className="list-group-item" data-id={result.id}>{result.name} - {result.id}</li>)}
+            { this.state.results.map(result => <li key={result.id} className="list-group-item" data-id={result.id}>{result.name}</li>)}
             </ul>
           </div>
       );
