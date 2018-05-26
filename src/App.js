@@ -31,7 +31,7 @@ class App extends Component {
 
     return (
       <Router>
-        <div className="App">
+        <div className="Container">
           <ul>
             <li><Link to="/search">Search</Link></li>
             <li><Link to="/chat">Chat</Link></li>

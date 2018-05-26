@@ -15,15 +15,19 @@ export default class Login extends Component {
   render() {
 	  return (
 	    <div>
-        <div className="LoginContainer">
-  				<h1>Chat Login</h1>
-  	      <form onSubmit={this.login}>
-  					<input type="text" id="email" placeholder="email" value={this.state.email} onChange={this.handleChange} />
-  		      <input type="password" id="password" placeholder="password" value={this.state.password} onChange={this.handleChange} />
-  		      <button onClick={this.login}>Login</button>
-  				</form>
+        <div className="container">
+  				<div className="row">
+            <div className="col">
+              <h1>Chat Login</h1>
+      	      <form onSubmit={this.login}>
+      					<input className="form-control mb-3" type="text" id="email" placeholder="email" value={this.state.email} onChange={this.handleChange} />
+      		      <input className="form-control mb-3" type="password" id="password" placeholder="password" value={this.state.password} onChange={this.handleChange} />
+      		      <button className="btn btn-primary mb-3" onClick={this.login}>Login</button>
+      				</form>
+            </div>
+          </div>
   	    </div>
-        <div className="LoginDisclaimer">
+        <div className="container mt-3">
           <Disclaimer />
         </div>
       </div>
