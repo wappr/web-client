@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Contacts.css';
+import {API_SERVER, API_VERSION} from '../config.js';
 import axios from 'axios';
 
 export default class Contacts extends Component {
@@ -21,7 +22,7 @@ export default class Contacts extends Component {
 
 	componentDidMount() {
 		let self = this;
-		axios.post('https://api.wappr.net/v1/contacts', {
+		axios.post(API_SERVER + API_VERSION + '/contacts', {
 			token: this.props.token
 		}).then(function(response) {
 			const contacts = response.data;

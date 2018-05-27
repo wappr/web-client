@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Disclaimer from './Disclaimer';
 import './Login.css';
+import {API_SERVER, API_VERSION} from '../config';
 import axios from 'axios';
 
 export default class Login extends Component {
@@ -35,8 +36,9 @@ export default class Login extends Component {
   }
 
   login = event => {
+    console.log(API_SERVER + API_VERSION + '/auth');
     event.preventDefault();
-    axios.post('https://api.wappr.net/v1/auth', {
+    axios.post(API_SERVER + API_VERSION + '/auth', {
       email: this.state.email,
       password: this.state.password
     })
