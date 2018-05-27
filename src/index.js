@@ -6,3 +6,4 @@ import App from './App';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 //registerServiceWorker();
+console.log('Client Version: ', '0.1.0');
