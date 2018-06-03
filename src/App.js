@@ -3,6 +3,7 @@ import Login from './components/Login';
 
 import Chat from './Routes/Chat.js';
 import Search from './Routes/Search.js';
+import Requests from './Routes/Requests';
 import {
   BrowserRouter as Router,
   Route,
@@ -33,12 +34,14 @@ class App extends Component {
       <Router>
         <div className="container">
           <ul className="nav nav-tabs mb-3 mt-3">
+            <li className="nav-item"><NavLink className="nav-link" activeClassName="active" to="/">Chat</NavLink></li>
             <li className="nav-item"><NavLink className="nav-link" activeClassName="active" to="/search">Search</NavLink></li>
-            <li className="nav-item"><NavLink className="nav-link" activeClassName="active" to="/chat">Chat</NavLink></li>
+            <li className="nav-item"><NavLink className="nav-link" activeClassName="active" to="/requests">Requests</NavLink></li>
             <li className="nav-item"><NavLink className="nav-link" activeClassName="active" to="/logout" onClick={this.logout}>Logout</NavLink></li>
           </ul>
           <Route path="/search" render={()=><Search token={this.state.token}/>}/>
-          <Route path="/chat" render={()=><Chat token={this.state.token} loadChat={this.loadChat} />} />
+          <Route path="/requests" render={()=><Requests />}/>
+          <Route path="/" render={()=><Chat token={this.state.token} loadChat={this.loadChat} />} />
         </div>
       </Router>
     );
